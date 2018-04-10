@@ -1,0 +1,5 @@
+me\conflicted\protocolview\commands\ProtocolCommand.class
+me\conflicted\protocolview\version\VersionManager.class
+me\conflicted\protocolview\listeners\JoinListener.class
+me\conflicted\protocolview\ProtocolViewPlugin.class
+me\conflicted\protocolview\version\Version.class

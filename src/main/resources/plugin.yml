@@ -1,0 +1,8 @@
+name: VersionView
+main: me.conflicted.protocolview.ProtocolViewPlugin
+author: [Conflicted, Notifyz]
+version: 0.1-SNAPSHOT
+description: VersionView v0.1-SNAPSHOT developed by Conflicted & Notifyz
+commands:
+ protocol:
+  aliases: [checkversion, versioncheck]
