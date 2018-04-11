@@ -1,5 +1,7 @@
 package me.conflicted.protocolview.commands;
 
+import java.util.HashSet;
+import java.util.Set;
 import java.util.stream.Stream;
 
 import org.bukkit.Bukkit;
@@ -11,6 +13,7 @@ import org.bukkit.entity.Player;
 import me.conflicted.protocolview.ProtocolViewPlugin;
 import me.conflicted.protocolview.version.Version;
 import net.md_5.bungee.api.ChatColor;
+import net.minecraft.util.org.apache.commons.lang3.StringUtils;
 
 /**
  * 
@@ -63,10 +66,11 @@ public class ProtocolCommand implements CommandExecutor {
 		} else if (args[0].equalsIgnoreCase("list")) {
 			if (args.length == 1) {
 				if (sender.hasPermission("protocol.list")) {
+					
 					sender.sendMessage(Stream.of(Version.values())
 							.map(version -> ChatColor.DARK_GRAY + "[" + ChatColor.GOLD + version.toString()
 									+ ChatColor.DARK_GRAY + "] (" + ChatColor.GRAY
-									+ plugin.getVersionManager().getCount(version) + ChatColor.DARK_GRAY + ") \n")
+									+ plugin.getVersionManager().getCount(version) + ChatColor.DARK_GRAY + ") " + StringUtils.join(plugin.getVersionManager().getByVersion(version), ChatColor.GRAY + ", ") + " \n")
 							.findAny().orElse(null));
 				} else {
 					sender.sendMessage(ChatColor.RED + "You don't have enough permission for this.");

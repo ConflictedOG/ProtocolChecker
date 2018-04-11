@@ -44,7 +44,7 @@ public class ProtocolViewPlugin extends JavaPlugin {
 	public void onDisable() {/* NO OP */}
 
 	private void loadManagers() {
-		this.versionManager = new VersionManager();
+		this.versionManager = new VersionManager(this);
 	}
 	
 	private void loadCommands() {
